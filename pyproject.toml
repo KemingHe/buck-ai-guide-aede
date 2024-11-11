@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "utadvisor-cs"
+name = "buck-ai-buide-aede"
 version = "0.1.0"
-description = "Streamit RAG undergrad AI advisor for UTA CS program, utilizing LangChain, Openai, and Pinecone."
+description = "Streamit RAG undergrad AI advisor for OSU AEDE program, utilizing LangChain, Openai, and Pinecone."
 authors = ["Keming He <keminghe.career@gmail.com>"]
 readme = "README.md"
 package-mode = false

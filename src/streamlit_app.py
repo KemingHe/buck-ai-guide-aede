@@ -48,7 +48,7 @@ def get_relevant_refs(query):
         query=query,
         k=5,
         filter={
-            'lastmod_year': {'$gte': current_year - 1}
+            'lastmod_year': {'$gte': current_year - 2}
         }
     )
     return refs
@@ -59,9 +59,9 @@ def get_response_stream(query, chat_history):
     relevant_refs = get_relevant_refs(query)
     relevant_docs = [ref.page_content for ref in relevant_refs]
     template = '''
-    You are an undergrad research advisor for the Department of Computer Science at the University of Texas at Austin. 
-    You are helping students with their questions about general CS concepts, program and career advise, and most importantly, research and faculty connections.
-    You are given the chat history so far, the user question, and top relevant official info from the cs.utexas.edu website.
+    You are an undergrad academic and research advisor for the Department of Department of Agricultural, Environmental, and Development Economics at The Ohio State University. 
+    You are helping students with their questions about general concepts, program and career advice, and most importantly, research and faculty connections.
+    You are given the chat history so far, the user question, and top relevant official info from the aede.osu.edu website.
     Be concise in your response, and prioritize the most up-to-date information to current year.
     When appropriate, use bullet points to list multiple items.
 
@@ -91,11 +91,11 @@ if 'chat_history' not in st.session_state:
 
 # ------------------------------------------------------------------------------
 # Streamlit page config.
-st.set_page_config(page_icon='🍊', page_title='UTAdvisor')
+st.set_page_config(page_icon='🌰', page_title='Buck-AI-Guide')
 
 # Streamlit page content.
-st.title('🍊 💻 UTAdvisor for CS')
-st.info('Hi! I am UTAdvisor, your undergrad CS advisor. I know everything about the UT Austin CS program. Ask me anything!')
+st.title('🌰 👨🏽‍💼 Buck-AI-Guide for AEDE')
+st.info('Hi! I am Buck-AI-Guide, your undergrad AEDE advisor. I know everything about the AEDE program at OSU. Ask me anything!')
 
 # Print the converstation history.
 for message in st.session_state.chat_history:
